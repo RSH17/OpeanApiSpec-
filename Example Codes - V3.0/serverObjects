@@ -1,0 +1,40 @@
+"servers": [
+    {
+      "url": "/api/v3"
+    },
+    {
+      "url": "https://petstore.swagger.io/v2",
+      "description": "The production API server"
+    },
+    {
+      "url": "{scheme}://{username}.gigantic-server.com:{port}/{basePath}",
+      "description": "The production API server",
+      "variables": {
+        "username": {
+          "default": "demo",
+          "description": "this value is assigned by the service provider, in this example `gigantic-server.com`"
+        },
+        "port": {
+          "enum": [
+            "8443",
+            "443"
+          ],
+          "default": "8443"
+        },
+        "scheme": {
+          "enum": [
+            "https",
+            "http"
+          ],
+          "default": "https"
+        },
+        "basePath": {
+        "enum": [
+            "v3",
+            "v2"
+          ],
+          "default": "v2"
+        }
+      }
+    }
+  ],
